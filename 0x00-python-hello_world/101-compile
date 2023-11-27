@@ -1,3 +1,11 @@
 #!/bin/bash
-python3 -m compileall $PYFILE -b
-Give feedback
+pyfile="$PYFILE"
+pycfile="${pyfile%.py}.pyc"
+
+echo "Compiling $pyfile ..."
+python3 -m compileall "$pyfile" -b
+
+if [ -f "__pycache__/$pycfile" ]; then
+    mv "__pycache__/$pycfile" .
+    rm -rf "__pycache__"
+fi
