@@ -3,5 +3,5 @@
 Prints the integer stored in the variable number,
 followed by Battery street, followed by a new line.
 """
-number = 98
+number = "Holberton"
 print(f"{number} Battery street")
